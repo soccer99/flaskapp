@@ -15,6 +15,8 @@ app.config['SECRET_KEY'] = "askdjf$23aaskjASDF231"
 
 DEBUG = os.getenv('DEBUG', True)
 
+print("DEBUG: " + str(DEBUG))
+
 # Database
 if DEBUG:
 	app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
