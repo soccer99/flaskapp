@@ -15,13 +15,11 @@ app.config['SECRET_KEY'] = "askdjf$23aaskjASDF231"
 
 DEBUG = os.getenv('DEBUG', True)
 
-DEBUG = False
-
 # Database
 if DEBUG:
 	app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
 else:
-	app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://flask-postgres.c8bgqppoeakl.us-west-1.rds.amazonaws.com:5432'
+	app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://brady:Xde782bUP6m1F@flask-postgres.c8bgqppoeakl.us-west-1.rds.amazonaws.com:5432/flask-postgres'
 
 db = SQLAlchemy(app)
 
