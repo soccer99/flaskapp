@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+      
+{% block content %}
+   
+   {%- for message in get_flashed_messages() %}
+      {{ message }}
+   {%- endfor %}
+	
+   <h3>Hardware (<a href = "{{ url_for('new') }}">Add Hardware
+      </a>)</h3>
+   <hr/>
+   <table class="table is-striped">
+      <thead>
+         <tr>
+            <th>Company</th>
+            <th>Model</th>
+            <th>Serial Number</th>
+            <!-- <th>Remove</th> -->
+         </tr>
+      </thead>
+      
+      <tbody>
+         {% for unit in hardware %}
+            <tr>
+               <td>{{ unit.company }}</td>
+               <td>{{ unit.model }}</td>
+               <td>{{ unit.sn }}</td>
+               <!-- <td><button id="hardware-{{unit.id}}" class="button is-small">Remove</button></td> -->
+            </tr>
+         {% endfor %}
+      </tbody>
+   </table>
+
+
+{% endblock %}

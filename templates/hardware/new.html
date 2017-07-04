@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+   
+{% block content %}
+   <h3>Hardware - Flask SQLAlchemy example</h3>
+   <hr/>
+   
+   {%- for category, message in get_flashed_messages(with_categories=true) %}
+      <div class="alert alert-danger">
+         {{ message }}
+      </div>
+   {%- endfor %}
+   
+   <div class="columns">
+      <div class="column is-offset-one-quarter is-6">
+         <form action="{{ request.path }}" method="post">
+            <div class="field">
+               <label class="label" for="name">Name</label>
+               <input class="input" type="text" name="name" placeholder="Name" />
+            </div>
+            <div class="field">
+               <label class="label" for="company">Company</label>
+               <input class="input" type="text" name="company" placeholder="Company" />
+            </div>
+            <div class="field">
+               <label class="label" for="model">Model</label>
+               <input class="input" type="text" name="model" placeholder="Model">
+            </div>
+            <div class="field">
+               <label class="label" for="sn">Serial Number</label>
+               <input class="input" type="text" name="sn" placeholder="Serial #" />
+            </div>
+            <input class="button is-outline" type="submit" value="Submit" />
+         </form>
+      </div>
+   </div>
+         
+      
+{% endblock %}
