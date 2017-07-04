@@ -1,6 +1,7 @@
 import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 # Global Variables
 
@@ -18,6 +19,8 @@ DEBUG = os.getenv('DEBUG', True)
 print("DEBUG: " + str(DEBUG))
 
 # Database
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 if DEBUG == "True":
 	app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
 else:
@@ -25,3 +28,4 @@ else:
 
 db = SQLAlchemy(app)
 
+migrate = Migrate(app, db)

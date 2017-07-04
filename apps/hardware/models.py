@@ -1,5 +1,10 @@
+from flask_migrate import Migrate
+
 from config.settings import app, db
 
+
+
+migrate = Migrate(app, db)
 
 class Hardware(db.Model):
 	id = db.Column('hardware_id', db.Integer, primary_key = True)
