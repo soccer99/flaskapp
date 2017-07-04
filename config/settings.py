@@ -21,7 +21,7 @@ print("DEBUG: " + str(DEBUG))
 if DEBUG == "True":
 	app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
 else:
-	app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://brady:Xde782bUP6m1F@flask-postgres.c8bgqppoeakl.us-west-1.rds.amazonaws.com:5432/flask-postgres'
+	app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://brady:Xde782bUP6m1F@flask-postgres.c8bgqppoeakl.us-west-1.rds.amazonaws.com:5432/flaskapp'
 
 db = SQLAlchemy(app)
 
