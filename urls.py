@@ -6,6 +6,7 @@ from apps.hardware.models import Hardware
 
 @app.route('/')
 def index():
+	return '<h1>HI</h1>'
 	return render_template('homepage.html')
 
 @app.route('/hardware')
